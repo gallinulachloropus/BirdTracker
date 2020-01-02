@@ -1,0 +1,104 @@
+{
+    "viera": [
+        {
+            "name": "Glossy Ibis",
+            "seen": false
+        },
+        {
+            "name": "Loggerhead Shrike",
+            "seen": false
+        },
+        {
+            "name": "Crested Caracara",
+            "seen": false
+        },
+        {
+            "name": "Painted Bunting",
+            "seen": false
+        },
+        {
+            "name": "Green Heron",
+            "seen": false
+        },
+        {
+            "name": "Black Vulture",
+            "seen": false
+        }
+    ],
+    "dunedin": [
+        {
+            "name": "Blue Jay",
+            "seen": false
+        },
+        {
+            "name": "Northern Cardinal",
+            "seen": false
+        },
+        {
+            "name": "Palm Warbler",
+            "seen": false
+        },
+        {
+            "name": "Northern Mockingbird",
+            "seen": false
+        },
+        {
+            "name": "Red-bellied Woodpecker",
+            "seen": false
+        }
+    ],
+    "everglades": [
+        {
+            "name": "Greater Flamingo",
+            "seen": false
+        },
+        {
+            "name": "White Crowned Pigeon",
+            "seen": false
+        },
+        {
+            "name": "Anhinga",
+            "seen": false
+        },
+        {
+            "name":"Roseate Spoonbill",
+            "seen": false
+        }
+    ],
+    "payne's prairie": [
+        {
+            "name": "Limpkin",
+            "seen": false
+        },
+        {
+            "name": "Snail Kite",
+            "seen": false
+        },
+        {
+            "name": "Red-Tailed Hawk",
+            "seen": false
+        }
+    ],
+    "honeymoon island": [
+        {
+            "name": "Black Skimmer",
+            "seen": false
+        },
+        {
+            "name": "Laughing Gull",
+            "seen": false
+        },
+        {
+            "name": "Royal Tern",
+            "seen": false
+        },
+        {
+            "name": "Osprey",
+            "seen": false
+        },
+        {
+            "name": "Great Horned Owl",
+            "seen": false
+        }
+    ]
+}

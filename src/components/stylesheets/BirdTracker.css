@@ -1,51 +1,56 @@
 @keyframes loading {
   from {
     opacity: 1;
-  } 
+  }
   to {
     opacity: 0;
   }
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-a, a:visited{
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a, a:visited {
   color: black;
   text-decoration: underline;
 }
 
-a:hover{
+a:hover {
   background: black;
   color: white;
 }
 
-nav > a, nav > a:visited{
+nav>a, nav>a:visited {
   color: white;
   text-decoration: none;
 }
 
-nav > a:hover{
+nav>a:hover {
   color: white;
   text-decoration: none;
-  background:#464646;
+  background: #464646;
 }
 
-a.wiki-link{
+a.wiki-link {
   font-size: 0.8rem;
   font-style: italic;
 }
 
-button{
+button {
   padding: 0.5rem;
   font-size: 0.8rem;
   border: 2px solid black;
   background: whitesmoke;
 }
 
-button:hover{
+button:hover {
   padding: 0.5rem;
   font-size: 0.8rem;
   color: whitesmoke;
@@ -62,44 +67,64 @@ body {
   font-size: 1.2rem;
 }
 
-header > h1, h2{
+article {
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+article>img {
+  border: double 4px black;
+}
+
+.article-img {
+  float: right;
+  margin: 1rem;
+  margin-left: 5rem;
+}
+
+article>p {
+  text-align: justify;
+  text-indent: 1rem;
+  padding: 0.5rem;
+  line-height: 175%;
+}
+
+header>h1, h2, h3 {
   margin: 0.5rem;
 }
 
-
-header > nav {
+header>nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   background: #232323;
 }
 
-header > nav * {
+header>nav * {
   display: block;
   background: black;
   color: white;
   padding: 1rem;
 }
 
-.active{
+.active {
   text-decoration: underline dotted;
 }
 
-div.home, div.tracker-list, div.about{
+div.home, div.tracker-list, div.about {
   padding: 1rem;
 }
 
-div.tracker-list{
+div.tracker-list {
   display: flex;
   flex-direction: row;
 }
 
-span.searchmatch{
-  font-weight:bold;
+span.searchmatch {
+  font-weight: bold;
 }
 
-
-div.tracker-list-item{
+div.tracker-list-item {
   background: #fefefe;
   margin: 0.5rem;
   padding: 1rem;
@@ -107,33 +132,33 @@ div.tracker-list-item{
   font-size: 1.25rem;
   display: flex;
   justify-content: space-between;
-  width: calc(100% + 1rem);
+  flex-wrap: wrap;
+  width: calc(100% - 2rem);
 }
 
-div.tracker-list-item:hover{
+div.tracker-list-item:hover {
   background: #f0f0f0;
-
 }
 
-div.tracker-list-item-text:hover{
+div.tracker-list-item-text:hover {
   cursor: pointer;
   text-decoration: underline dotted;
 }
 
-div.tracker-info{
+div.tracker-info {
   margin: 1rem;
-
 }
 
-select{
-  font-size: 1.75em;
+select {
+  font-size: 1.5rem;
+  width: auto;
 }
 
-h1.loading{
+h1.loading {
   animation: loading 1s infinite alternate;
 }
 
-label{
-  color: rgba(0,0,0,0.5);
-  font-size:0.8rem;
+label {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
 }

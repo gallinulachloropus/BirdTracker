@@ -6,10 +6,10 @@ export default function TrackerList(props) {
     return (
         <React.Fragment>
             <div className="tracker-info">
-                <TrackerInfo currentBird={props.currentBird} isLoading={props.isLoading} />
+                <TrackerInfo currentBird={props.currentBird} isLoading={props.isLoading} currentRegion={props.currentRegion} />
             </div>
             <div className="tracker-list">
-                {props.location ? props.getBirds(props) : ""}
+                {props.currentRegion ? props.getBirds(props) : ""}
             </div>
 
         </React.Fragment>

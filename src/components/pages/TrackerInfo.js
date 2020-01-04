@@ -3,14 +3,16 @@ import Parser from 'html-react-parser'
 
 export default function TrackerInfo(props) {
     const keyValue = props.currentBird.info.query ? Object.keys(props.currentBird.info.query.pages)[0] : ''
-    const parsedInfo = props.currentBird.info.query ? Parser(`${props.currentBird.info.query.pages[keyValue].extract} → `) : (props.currentBird.info.error ? props.currentBird.info.error.info : "")
+    const { extract, title, thumbnail } = props.currentBird.info.query ? props.currentBird.info.query.pages[keyValue] : ''
+    const parsedInfo = props.currentBird.info.query ? Parser(`${extract} → `) : (props.currentBird.info.error ? props.currentBird.info.error.info : "")
     if (props.isLoading === false) {
         return (
             <div>
-                <h2>Bird Information: </h2>
+                <h2>{title ? title.toUpperCase() : props.currentRegion.toUpperCase()}</h2>
                 <article>
-                    {parsedInfo ? parsedInfo : "Select a location, then select a bird..."}
-                    {props.currentBird.info.query ? <a href={`https://en.wikipedia.org/wiki/${props.currentBird.info.query.pages[keyValue].title}`} className="wiki-link">{props.currentBird.info.query.pages[keyValue].title} on Wikipedia</a> : ""}
+                    <img src={thumbnail ? thumbnail.source : "loading.gif"} alt={title} title={title} className="article-img" />
+                    {parsedInfo ? parsedInfo : "Select a currentRegion, then select a bird..."}
+                    {props.currentBird.info.query ? <a href={`https://en.wikipedia.org/wiki/${title}`} className="wiki-link">{title} on Wikipedia</a> : ""}
                 </article>
             </div>
         )

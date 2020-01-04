@@ -8,8 +8,10 @@ import axios from 'axios'
 export default class BirdTrackerContainer extends Component {
     state = {
         isLoading: false,
-        location: "",
-        birds: {},
+        currentRegion: "",
+        regions: {
+            birds: []
+        },
         currentBird: {
             info: "",
             image: ""
@@ -23,7 +25,7 @@ export default class BirdTrackerContainer extends Component {
             this.setState(userData)
         } else {
             axios.get('./birdList.json')
-                .then(response => this.setState({ birds: response.data }))
+                .then(response => this.setState({ regions: { birds: response.data } }))
         }
     }
 
@@ -43,20 +45,18 @@ export default class BirdTrackerContainer extends Component {
     }
 
     handleCheck = (bird) => {
-        const updatedState = this.state.birds[this.state.location].map(thisBird => {
+        const updatedState = this.state.regions.birds[this.state.currentRegion].map(thisBird => {
             if (thisBird.name === bird.name) {
                 thisBird.seen = !thisBird.seen
             }
             return thisBird
         })
-
-        console.log(updatedState)
-        this.setState(prev => { return { birds: { ...prev.birds, [this.state.location]: updatedState } } })
+        this.setState(prev => { return { birds: { ...prev.birds, [this.state.currentRegion]: updatedState } } })
     }
 
     getBirds = (props) => {
-        const { location } = props
-        const birdList = this.state.birds[location].map(bird => {
+        const { currentRegion } = props
+        const birdList = this.state.regions.birds[currentRegion].map(bird => {
             return (
                 <TrackerListItem bird={bird} getBirdInfo={this.getBirdInfo} handleCheck={this.handleCheck} key={uuidv4()} />
             )
@@ -70,7 +70,7 @@ export default class BirdTrackerContainer extends Component {
 
     getBirdInfo = (bird) => {
         this.setState({ isLoading: true })
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&explaintext=1&titles=${bird}&origin=*&redirects=1`)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${bird}&pithumbsize=250&origin=*&redirects=1`)
             .then(response => {
                 this.setState({ isLoading: false })
                 this.setState(prev => { return ({ currentBird: { ...prev.currentBird, info: response.data } }) })
@@ -78,19 +78,19 @@ export default class BirdTrackerContainer extends Component {
     }
 
     getOptions = (props) => {
-        const areas = Object.keys(this.state.birds)
+        const areas = Object.keys(this.state.regions.birds)
         const options = areas.map(area => {
             return <option value={area} key={uuidv4()}>{area.toUpperCase()}</option>
         })
         return (
-            <select value={props.location} onChange={props.handleChange} name="location" style={{}}>
-                <option value="">Select a location</option>
+            <select value={props.currentRegion} onChange={props.handleChange} name="currentRegion" style={{}}>
+                <option value="">Select a region</option>
                 {options}
             </select>
         )
     }
 
     render() {
-        return <BirdTrackerDisplay handleChange={this.handleChange} location={this.state.location} getBirds={this.getBirds} getOptions={this.getOptions} state={this.state} />
+        return <BirdTrackerDisplay handleChange={this.handleChange} currentRegion={this.state.currentRegion} getBirds={this.getBirds} getOptions={this.getOptions} state={this.state} />
     }
 }

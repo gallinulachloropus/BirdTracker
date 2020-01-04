@@ -10,10 +10,10 @@ export default function BirdTrackerDisplay(props) {
     return (
         <BrowserRouter>
             <React.Fragment>
-                <Header location={props.location}/>
+                <Header currentRegion={props.currentRegion} />
                 <Switch>
-                    <Route path="/" exact render={() => { return <Home location={props.location} handleChange={props.handleChange} getOptions={props.getOptions} /> }} />
-                    <Route path="/tracker" render={() => { return <TrackerList location={props.location} getBirds={props.getBirds} currentBird={props.state.currentBird} isLoading={props.state.isLoading} /> }} />
+                    <Route path="/" exact render={() => { return <Home currentRegion={props.currentRegion} handleChange={props.handleChange} getOptions={props.getOptions} /> }} />
+                    <Route path="/tracker" render={() => { return <TrackerList currentRegion={props.currentRegion} getBirds={props.getBirds} currentBird={props.state.currentBird} isLoading={props.state.isLoading} /> }} />
                     <Route path="/about" component={About} />
                 </Switch>
             </React.Fragment>

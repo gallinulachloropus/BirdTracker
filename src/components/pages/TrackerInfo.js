@@ -11,7 +11,7 @@ export default function TrackerInfo(props) {
                 <h2>{title ? title.toUpperCase() : props.currentRegion.toUpperCase()}</h2>
                 <article>
                     <img src={thumbnail ? thumbnail.source : "loading.gif"} alt={title} title={title} className="article-img" />
-                    {parsedInfo ? parsedInfo : "Select a currentRegion, then select a bird..."}
+                    {parsedInfo ? parsedInfo : "Select a region, then select a bird..."}
                     {props.currentBird.info.query ? <a href={`https://en.wikipedia.org/wiki/${title}`} className="wiki-link">{title} on Wikipedia</a> : ""}
                 </article>
             </div>

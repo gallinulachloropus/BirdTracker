@@ -9,24 +9,28 @@ export default class BirdTrackerContainer extends Component {
     state = {
         isLoading: false,
         currentRegion: "",
+        currentRegionInfo: "",
         regions: {
-            birds: []
+            birds: {
+                species: [],
+                info: ""
+            }
         },
         currentBird: {
-            info: "",
-            image: ""
+            info: ""
         }
     }
 
     componentDidMount() {
         const userData = JSON.parse(localStorage.getItem('birds'))
-
         if (localStorage.getItem('birds')) {
             this.setState(userData)
         } else {
             axios.get('./birdList.json')
                 .then(response => this.setState({ regions: { birds: response.data } }))
         }
+
+
     }
 
     componentDidUpdate() {
@@ -42,10 +46,11 @@ export default class BirdTrackerContainer extends Component {
         }
         this.setState({ [name]: value })
 
+
     }
 
     handleCheck = (bird) => {
-        const updatedState = this.state.regions.birds[this.state.currentRegion].map(thisBird => {
+        const updatedState = this.state.regions.birds[this.state.currentRegion].species.map(thisBird => {
             if (thisBird.name === bird.name) {
                 thisBird.seen = !thisBird.seen
             }
@@ -56,7 +61,7 @@ export default class BirdTrackerContainer extends Component {
 
     getBirds = (props) => {
         const { currentRegion } = props
-        const birdList = this.state.regions.birds[currentRegion].map(bird => {
+        const birdList = this.state.regions.birds[currentRegion].species.map(bird => {
             return (
                 <TrackerListItem bird={bird} getBirdInfo={this.getBirdInfo} handleCheck={this.handleCheck} key={uuidv4()} />
             )
@@ -91,6 +96,6 @@ export default class BirdTrackerContainer extends Component {
     }
 
     render() {
-        return <BirdTrackerDisplay handleChange={this.handleChange} currentRegion={this.state.currentRegion} getBirds={this.getBirds} getOptions={this.getOptions} state={this.state} />
+        return <BirdTrackerDisplay handleChange={this.handleChange} currentRegion={this.state.currentRegion} currentRegionInfo={this.state.currentRegionInfo} getBirds={this.getBirds} getOptions={this.getOptions} state={this.state} />
     }
 }

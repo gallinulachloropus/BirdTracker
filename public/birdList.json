@@ -1,96 +1,162 @@
 {
-    "Western US": [
-        {
-            "name": "Glossy Ibis",
-            "seen": false
-        },
-        {
-            "name": "Loggerhead Shrike",
-            "seen": false
-        },
-        {
-            "name": "Crested Caracara",
-            "seen": false
-        },
-        {
-            "name": "Painted Bunting",
-            "seen": false
-        },
-        {
-            "name": "Green Heron",
-            "seen": false
-        },
-        {
-            "name": "Black Vulture",
-            "seen": false
+    "Western US": {
+        "species": [
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black Vulture",
+                "seen": false
+            }
+        ],
+        "info": {
+            "coords": [42.017283, -117.065242],
+            "desc": "The western portion of the United States"
         }
-    ],
-    "Southwestern US": [
-        {
-            "name": "Blue Jay",
-            "seen": false
-        },
-        {
-            "name": "Northern Cardinal",
-            "seen": false
-        },
-        {
-            "name": "Palm Warbler",
-            "seen": false
-        },
-        {
-            "name": "Northern Mockingbird",
-            "seen": false
-        },
-        {
-            "name": "Red-bellied Woodpecker",
-            "seen": false
+    },
+    "Southwestern US": {
+        "species": [
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black Vulture",
+                "seen": false
+            }
+        ],
+        "info": {
+            "coords": [36.968845, -109.050821],
+            "desc": ""
         }
-    ],
-    "Midwestern US": [
-        {
-            "name": "Greater Flamingo",
-            "seen": false
-        },
-        {
-            "name": "White-crowned Pigeon",
-            "seen": false
-        },
-        {
-            "name": "Anhinga",
-            "seen": false
-        },
-        {
-            "name": "Roseate Spoonbill",
-            "seen": false
+    },
+    "Northeast US": {
+        "species": [
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black Vulture",
+                "seen": false
+            }
+        ],
+        "info": {
+            "coords": [42.578472, -75.005325],
+            "desc": ""
         }
-    ],
-    "Northeastern US": [
-        {
-            "name": "Limpkin",
-            "seen": false
-        },
-        {
-            "name": "Snail Kite",
-            "seen": false
-        },
-        {
-            "name": "Red-Tailed Hawk",
-            "seen": false
+    },
+    "Midwest US": {
+        "species": [
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black Vulture",
+                "seen": false
+            }
+        ],
+        "info": {
+            "coords": [41.812160, -91.050754],
+            "desc": ""
         }
-    ],
-    "Southeastern US": [
-        {
-            "name": "Limpkin",
-            "seen": false
-        },
-        {
-            "name": "Snail Kite",
-            "seen": false
-        },
-        {
-            "name": "Red-Tailed Hawk",
-            "seen": false
+    },
+    "Southeast US": {
+        "species": [
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black Vulture",
+                "seen": false
+            }
+        ],
+        "info": {
+            "coords": [31.032629, -84.988584],
+            "desc": ""
         }
-    ]
+    }
 }

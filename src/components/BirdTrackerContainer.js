@@ -1,101 +1,122 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import BirdTrackerDisplay from './BirdTrackerDisplay'
-import TrackerListItem from './pages/TrackerListItem'
-import uuidv4 from 'uuid'
+import TrackerItem from './pages/Tracker/TrackerItem'
+
 import axios from 'axios'
+import uuidv4 from 'uuid'
 
+import './stylesheet.css'
 
-export default class BirdTrackerContainer extends Component {
-    state = {
-        isLoading: false,
-        currentRegion: "",
-        currentRegionInfo: "",
-        regions: {
-            birds: {
-                species: [],
-                info: ""
-            }
-        },
-        currentBird: {
-            info: ""
+const BirdTrackerContainer = () => {
+    const [loaded, setLoaded] = useState(false)
+    const [location, setLocation] = useState('')
+    const [regionInfo, setRegionInfo] = useState({ desc: '', coords: ['', ''] })
+    const [regions, setRegions] = useState({ error: 'JSON file not found' })
+    const [currentSpecies, setCurrentSpecies] = useState({ image: '', info: '', title: '' })
+
+    useEffect(() => {
+        const userData = JSON.parse(localStorage.getItem('regions'))
+        if (localStorage.getItem('regions')) {
+            setRegions(userData)
+            setLoaded(true)
         }
-    }
-
-    componentDidMount() {
-        const userData = JSON.parse(localStorage.getItem('birds'))
-        if (localStorage.getItem('birds')) {
-            this.setState(userData)
-        } else {
+        else {
             axios.get('./birdList.json')
-                .then(response => this.setState({ regions: { birds: response.data } }))
+                .then(response => {
+                    setRegions(response.data)
+                    setLoaded(true)
+                })
         }
+    }, [])
 
 
-    }
-
-    componentDidUpdate() {
-        localStorage.setItem('birds', JSON.stringify(this.state))
-    }
-
-
-
-    handleChange = (e) => {
-        const { value, name, type } = e.target
-        if (type === 'select-one') {
-            this.setState({ currentBird: { info: "", image: "" } })
+    useEffect(() => {
+        if (location) {
+            setRegionInfo(regions[location].info)
+        } else {
+            setRegionInfo({ desc: '', coords: [0, 0] })
         }
-        this.setState({ [name]: value })
+    }, [location, regions])
+
+    useEffect(() => {
+        localStorage.setItem('regions', JSON.stringify(regions))
+    })
 
 
+    const handleLocationSelect = (e) => {
+        const { value } = e.target
+        setLocation(value)
+        setCurrentSpecies({ image: '', info: '', title: '' })
     }
 
-    handleCheck = (bird) => {
-        const updatedState = this.state.regions.birds[this.state.currentRegion].species.map(thisBird => {
-            if (thisBird.name === bird.name) {
-                thisBird.seen = !thisBird.seen
+    const handleTrackerCheck = (species) => {
+        regions[location].species.map(currentSpecies => {
+            if (currentSpecies.name === species.name) {
+                currentSpecies.seen = !currentSpecies.seen
             }
-            return thisBird
+            return currentSpecies
         })
-        this.setState(prev => { return { birds: { ...prev.birds, [this.state.currentRegion]: updatedState } } })
+        setRegions({ ...regions}) //not completely sure why this works
     }
 
-    getBirds = (props) => {
-        const { currentRegion } = props
-        const birdList = this.state.regions.birds[currentRegion].species.map(bird => {
+    const getLocationOptions = () => {
+        return Object.keys(regions).map(currentRegion => {
             return (
-                <TrackerListItem bird={bird} getBirdInfo={this.getBirdInfo} handleCheck={this.handleCheck} key={uuidv4()} />
+                <option value={currentRegion} key={uuidv4()}>{currentRegion}</option>
             )
         })
-        return (
-            <div>
-                {birdList}
-            </div>
-        )
     }
 
-    getBirdInfo = (bird) => {
-        this.setState({ isLoading: true })
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${bird}&pithumbsize=250&origin=*&redirects=1`)
+    const getTrackerItems = () => {
+        if (loaded && location) {
+            return regions[location].species.map(thisSpecies =>
+                <TrackerItem
+                    species={thisSpecies}
+                    key={uuidv4()}
+                    handleTrackerCheck={handleTrackerCheck}
+                    getSpeciesInfo={getSpeciesInfo}
+                />
+            )
+        } else {
+            return <em>Select a location...</em>
+        }
+    }
+
+    const getSpeciesInfo = (species) => {
+        setLoaded(false)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${species}&pithumbsize=250&origin=*&redirects=1`)
             .then(response => {
-                this.setState({ isLoading: false })
-                this.setState(prev => { return ({ currentBird: { ...prev.currentBird, info: response.data } }) })
+                setLoaded(true)
+                return (
+                    setCurrentSpecies({ title: species, image: response.data.query.pages[Object.keys(response.data.query.pages)[0]].thumbnail, info: response.data.query.pages[Object.keys(response.data.query.pages)[0]].extract })
+                )
             })
+
     }
 
-    getOptions = (props) => {
-        const areas = Object.keys(this.state.regions.birds)
-        const options = areas.map(area => {
-            return <option value={area} key={uuidv4()}>{area.toUpperCase()}</option>
-        })
-        return (
-            <select value={props.currentRegion} onChange={props.handleChange} name="currentRegion" style={{}}>
-                <option value="">Select a region</option>
-                {options}
-            </select>
-        )
+    const reset = () => {
+        localStorage.clear()
+        window.location.reload(false)
     }
 
-    render() {
-        return <BirdTrackerDisplay handleChange={this.handleChange} currentRegion={this.state.currentRegion} currentRegionInfo={this.state.currentRegionInfo} getBirds={this.getBirds} getOptions={this.getOptions} state={this.state} />
-    }
+
+
+
+
+    return (
+        <BirdTrackerDisplay
+            location={location}
+            currentSpecies={currentSpecies}
+            regionInfo={regionInfo}
+            regions={regions}
+            loaded={loaded}
+            handleLocationSelect={handleLocationSelect}
+            getLocationOptions={getLocationOptions}
+            getTrackerItems={getTrackerItems}
+            reset={reset}
+        />
+    )
 }
+
+export default BirdTrackerContainer

@@ -1,24 +1,24 @@
 {
-    "Western US": {
+    "Florida and Gulf Coast": {
         "species": [
             {
-                "name": "Glossy Ibis",
+                "name": "Great Egret",
                 "seen": false
             },
             {
-                "name": "Loggerhead Shrike",
+                "name": "Great Blue Heron",
                 "seen": false
             },
             {
-                "name": "Crested Caracara",
+                "name": "American White Ibis",
                 "seen": false
             },
             {
-                "name": "Painted Bunting",
+                "name": "Anhinga",
                 "seen": false
             },
             {
-                "name": "Green Heron",
+                "name": "Common Gallinule",
                 "seen": false
             },
             {
@@ -27,136 +27,73 @@
             }
         ],
         "info": {
-            "coords": [42.017283, -117.065242],
-            "desc": "The western portion of the United States"
+            "coords": [29.728655, -85.248072],
+            "desc": "Florida and the coastal area along the Gulf of Mexico in the southern United States"
         }
     },
-    "Southwestern US": {
+    "Texas and Southwest": {
         "species": [
             {
-                "name": "Glossy Ibis",
+                "name": "Red-Tailed Hawk",
                 "seen": false
             },
             {
-                "name": "Loggerhead Shrike",
+                "name": "Turkey Vulture",
                 "seen": false
             },
             {
-                "name": "Crested Caracara",
+                "name": "Brown-headed cowbird",
                 "seen": false
             },
             {
-                "name": "Painted Bunting",
+                "name": "Cattle Egret",
                 "seen": false
             },
             {
-                "name": "Green Heron",
+                "name": "Gambel's Quail",
                 "seen": false
             },
             {
-                "name": "Black Vulture",
+                "name": "Cactus Wren",
                 "seen": false
             }
         ],
         "info": {
-            "coords": [36.968845, -109.050821],
-            "desc": ""
+            "coords": [33.443048, -103.022247],
+            "desc": "Texas and the desert states in the southwestern United States"
         }
     },
-    "Northeast US": {
+    "Cascadia": {
         "species": [
             {
-                "name": "Glossy Ibis",
+                "name": "Bald Eagle",
                 "seen": false
             },
             {
-                "name": "Loggerhead Shrike",
+                "name": "Stellar's Jay",
                 "seen": false
             },
             {
-                "name": "Crested Caracara",
+                "name": "Cooper's Hawk",
                 "seen": false
             },
             {
-                "name": "Painted Bunting",
+                "name": "Common Raven",
                 "seen": false
             },
             {
-                "name": "Green Heron",
+                "name": "Dark-Eyed Junco",
                 "seen": false
             },
             {
-                "name": "Black Vulture",
+                "name": "American Robin",
                 "seen": false
             }
         ],
         "info": {
-            "coords": [42.578472, -75.005325],
-            "desc": ""
-        }
-    },
-    "Midwest US": {
-        "species": [
-            {
-                "name": "Glossy Ibis",
-                "seen": false
-            },
-            {
-                "name": "Loggerhead Shrike",
-                "seen": false
-            },
-            {
-                "name": "Crested Caracara",
-                "seen": false
-            },
-            {
-                "name": "Painted Bunting",
-                "seen": false
-            },
-            {
-                "name": "Green Heron",
-                "seen": false
-            },
-            {
-                "name": "Black Vulture",
-                "seen": false
-            }
-        ],
-        "info": {
-            "coords": [41.812160, -91.050754],
-            "desc": ""
-        }
-    },
-    "Southeast US": {
-        "species": [
-            {
-                "name": "Glossy Ibis",
-                "seen": false
-            },
-            {
-                "name": "Loggerhead Shrike",
-                "seen": false
-            },
-            {
-                "name": "Crested Caracara",
-                "seen": false
-            },
-            {
-                "name": "Painted Bunting",
-                "seen": false
-            },
-            {
-                "name": "Green Heron",
-                "seen": false
-            },
-            {
-                "name": "Black Vulture",
-                "seen": false
-            }
-        ],
-        "info": {
-            "coords": [31.032629, -84.988584],
-            "desc": ""
+            "coords": [42.840151, -122.290295],
+            "desc": "Northern California through Washington, characterized by mountians and rainforests"
         }
     }
+
 }

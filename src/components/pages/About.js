@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function About() {
+const About = (props) => {
     return (
-        <div className="about">
-            This is BirdTracker v0.0.1 by Nathan Parker
-            <br />
-            <button onClick={() => {
-                localStorage.clear()
-                window.location.reload(false)
-            }}>Reset BirdTracker</button>
-        </div>
+        <main>
+            <p>BirdTracker v0.2.0</p>
+            <button onClick={props.reset}>
+                Reset BirdTracker
+            </button>
+        </main>
     )
 }
+
+export default About

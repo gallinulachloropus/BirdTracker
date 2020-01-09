@@ -5,11 +5,15 @@
                 42.840151,
                 -122.290295
             ],
-            "desc": "Northern California through Washington, characterized by mountians and rainforests"
+            "desc": "The region spanning from northern California through Washington, characterized by mountians and rainforests."
         },
         "species": [
             {
                 "name": "Bald Eagle",
+                "seen": false
+            },
+            {
+                "name": "Golden Eagle",
                 "seen": false
             },
             {
@@ -60,11 +64,15 @@
                 29.728655,
                 -85.248072
             ],
-            "desc": "Florida and the coastal area along the Gulf of Mexico in the southern United States"
+            "desc": "Florida, and the coastal area along the Gulf of Mexico in the southern United States."
         },
         "species": [
             {
                 "name": "Great Egret",
+                "seen": false
+            },
+            {
+                "name": "Snowy Egret",
                 "seen": false
             },
             {
@@ -80,11 +88,23 @@
                 "seen": false
             },
             {
+                "name": "Double-crested cormorant",
+                "seen": false
+            },
+            {
                 "name": "Common Gallinule",
                 "seen": false
             },
             {
                 "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "Red-shouldered Hawk",
+                "seen": false
+            },
+            {
+                "name": "Bald Eagle",
                 "seen": false
             },
             {
@@ -110,6 +130,30 @@
             {
                 "name": "Florida Scrub Jay",
                 "seen": false
+            },
+            {
+                "name": "Black Skimmer",
+                "seen": false
+            },
+            {
+                "name": "Willet",
+                "seen": false
+            },
+            {
+                "name": "Laughing Gull",
+                "seen": false
+            },
+            {
+                "name": "Least Tern",
+                "seen": false
+            },
+            {
+                "name": "Royal Tern",
+                "seen": false
+            },
+            {
+                "name": "Sanderling",
+                "seen": false
             }
             
         ]
@@ -120,11 +164,15 @@
                 33.443048,
                 -103.022247
             ],
-            "desc": "Texas and the desert states in the southwestern United States"
+            "desc": "Texas, and the desert states in the southwestern United States."
         },
         "species": [
             {
                 "name": "Red-Tailed Hawk",
+                "seen": false
+            },
+            {
+                "name": "Greater Roadrunner",
                 "seen": false
             },
             {
@@ -136,7 +184,7 @@
                 "seen": false
             },
             {
-                "name": "Brown-headed cowbird",
+                "name": "Brown-headed Cowbird",
                 "seen": false
             },
             {
@@ -191,7 +239,7 @@
             "coords": [
                 38.902927, -77.039984
             ],
-            "desc": "Birds commonly found throughout the continenental United States"
+            "desc": "Notably common birds that can be found throughout the 48 continental states."
         },
         "species": [
             {
@@ -220,6 +268,10 @@
             },
             {
                 "name": "House Sparrow",
+                "seen": false
+            },
+            {
+                "name": "Mourning Dove",
                 "seen": false
             }
             

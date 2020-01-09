@@ -8,8 +8,8 @@ const RegionMap = (props) => {
         <Fragment>
             <Map
                 google={props.google}
-                zoom={5.5}
-                defaultZoom={5.5}
+                zoom={5.2}
+                defaultZoom={5.2}
                 center={{
                     lat: props.lat,
                     lng: props.long
@@ -19,6 +19,7 @@ const RegionMap = (props) => {
                     lng: props.long
                 }}
                 style={props.lat && props.long ? style : styleNone}
+                draggable= {false}
             >
 
             </Map>

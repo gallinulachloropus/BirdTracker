@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import BirdTrackerDisplay from './BirdTrackerDisplay'
 import TrackerItem from './pages/Tracker/TrackerItem'
@@ -14,7 +14,7 @@ const BirdTrackerContainer = () => {
     const [loaded, setLoaded] = useState(false)
     const [location, setLocation] = useState('')
     const [regionInfo, setRegionInfo] = useState({ desc: '', coords: ['', ''] })
-    const [regions, setRegions] = useState({ error: 'JSON file not found' })
+    const [regions, setRegions] = useState({ 'Error: Region file not found': 'Error: Region file not found' })
     const [currentSpecies, setCurrentSpecies] = useState({ image: '', info: '', title: '' })
 
     useEffect(() => {
@@ -83,13 +83,13 @@ const BirdTrackerContainer = () => {
                 />
             )
         } else {
-            return <p style={{width: "80vw"}}><em>To use the tracker, select a location from the <Link to="./">Home</Link> page. Then, return here and select a bird for more information.</em> </p>
+            return <p style={{ width: "80vw", margin: 'auto' }}><em>To use the tracker, select a location from the <Link to="./">Home</Link> page. Then, return here and select a bird for more information.</em> </p>
         }
     }
 
     const getSpeciesInfo = (species) => {
         setLoaded(false)
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${species}&pithumbsize=250&origin=*&redirects=1`)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
             .then(response => {
                 setLoaded(true)
                 return (
@@ -109,7 +109,7 @@ const BirdTrackerContainer = () => {
             return (
                 <Fragment>
                     <h3>Total seen: {seenList.length}</h3>
-                    <button onClick={() => download(seenList.map(bird => bird.name),'birds-seen.txt','text/plain')}>Download List</button>
+                    <button onClick={() => download(seenList.map(bird => bird.name), 'birds-seen.txt', 'text/plain')}>Download List</button>
                     <ul className="seen-list">
                         {seenList.map(species => <li key={uuidv4()}>{species.name}</li>)}
                     </ul>

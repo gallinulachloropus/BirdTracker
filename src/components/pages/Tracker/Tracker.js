@@ -5,20 +5,20 @@ const Tracker = (props) => {
 
     if (props.loaded) {
         return (
-            <div>
-                <TrackerInfo currentSpecies={props.currentSpecies}/>
+            <main>
+                <TrackerInfo currentSpecies={props.currentSpecies} setCurrentSpecies={props.setCurrentSpecies} />
 
-                <div style={{ width: "max-content" }}>
-                    <ul>
-                        {props.getTrackerItems()}
-                    </ul>
+                <div className="tracker-item-container">
+
+                    {props.getTrackerItems()}
+
                 </div>
-            </div>
+            </main>
         )
     }
     else {
         return (
-            <h2>Loading...</h2>
+            <h1 className="loading">...</h1>
         )
     }
 }

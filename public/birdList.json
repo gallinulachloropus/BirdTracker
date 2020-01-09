@@ -1,69 +1,12 @@
 {
-    "Florida and Gulf Coast": {
-        "species": [
-            {
-                "name": "Great Egret",
-                "seen": false
-            },
-            {
-                "name": "Great Blue Heron",
-                "seen": false
-            },
-            {
-                "name": "American White Ibis",
-                "seen": false
-            },
-            {
-                "name": "Anhinga",
-                "seen": false
-            },
-            {
-                "name": "Common Gallinule",
-                "seen": false
-            },
-            {
-                "name": "Black Vulture",
-                "seen": false
-            }
-        ],
-        "info": {
-            "coords": [29.728655, -85.248072],
-            "desc": "Florida and the coastal area along the Gulf of Mexico in the southern United States"
-        }
-    },
-    "Texas and Southwest": {
-        "species": [
-            {
-                "name": "Red-Tailed Hawk",
-                "seen": false
-            },
-            {
-                "name": "Turkey Vulture",
-                "seen": false
-            },
-            {
-                "name": "Brown-headed cowbird",
-                "seen": false
-            },
-            {
-                "name": "Cattle Egret",
-                "seen": false
-            },
-            {
-                "name": "Gambel's Quail",
-                "seen": false
-            },
-            {
-                "name": "Cactus Wren",
-                "seen": false
-            }
-        ],
-        "info": {
-            "coords": [33.443048, -103.022247],
-            "desc": "Texas and the desert states in the southwestern United States"
-        }
-    },
     "Cascadia": {
+        "info": {
+            "coords": [
+                42.840151,
+                -122.290295
+            ],
+            "desc": "Northern California through Washington, characterized by mountians and rainforests"
+        },
         "species": [
             {
                 "name": "Bald Eagle",
@@ -88,12 +31,198 @@
             {
                 "name": "American Robin",
                 "seen": false
+            },
+            {
+                "name": "Western Meadowlark",
+                "seen": false
+            },
+            {
+                "name": "California Quail",
+                "seen": false
+            },
+            {
+                "name": "Spotted Towhee",
+                "seen": false
+            },
+            {
+                "name": "California Scrub Jay",
+                "seen": false
+            },
+            {
+                "name": "Cedar Waxwing",
+                "seen": false
             }
-        ],
+        ]
+    },
+    "Florida and Gulf Coast": {
         "info": {
-            "coords": [42.840151, -122.290295],
-            "desc": "Northern California through Washington, characterized by mountians and rainforests"
-        }
+            "coords": [
+                29.728655,
+                -85.248072
+            ],
+            "desc": "Florida and the coastal area along the Gulf of Mexico in the southern United States"
+        },
+        "species": [
+            {
+                "name": "Great Egret",
+                "seen": false
+            },
+            {
+                "name": "Great Blue Heron",
+                "seen": false
+            },
+            {
+                "name": "American White Ibis",
+                "seen": false
+            },
+            {
+                "name": "Anhinga",
+                "seen": false
+            },
+            {
+                "name": "Common Gallinule",
+                "seen": false
+            },
+            {
+                "name": "Crested Caracara",
+                "seen": false
+            },
+            {
+                "name": "American Coot",
+                "seen": false
+            },
+            {
+                "name": "Green Heron",
+                "seen": false
+            },
+            {
+                "name": "Black-crowned night heron",
+                "seen": false
+            },
+            {
+                "name": "Yellow-crowned night heron",
+                "seen": false
+            },
+            {
+                "name": "Roseate Spoonbill",
+                "seen": false
+            },
+            {
+                "name": "Florida Scrub Jay",
+                "seen": false
+            }
+            
+        ]
+    },
+    "Texas and Southwest": {
+        "info": {
+            "coords": [
+                33.443048,
+                -103.022247
+            ],
+            "desc": "Texas and the desert states in the southwestern United States"
+        },
+        "species": [
+            {
+                "name": "Red-Tailed Hawk",
+                "seen": false
+            },
+            {
+                "name": "Pyrrhuloxia",
+                "seen": false
+            },
+            {
+                "name": "Turkey Vulture",
+                "seen": false
+            },
+            {
+                "name": "Brown-headed cowbird",
+                "seen": false
+            },
+            {
+                "name": "Cattle Egret",
+                "seen": false
+            },
+            {
+                "name": "Gambel's Quail",
+                "seen": false
+            },
+            {
+                "name": "Cactus Wren",
+                "seen": false
+            },
+            {
+                "name": "Harris's Hawk",
+                "seen": false
+            },
+            {
+                "name": "Acorn Woodpecker",
+                "seen": false
+            },
+            {
+                "name": "Gila Woodpecker",
+                "seen": false
+            },
+            {
+                "name": "Phainopepla",
+                "seen": false
+            },
+            {
+                "name": "Common Black Hawk",
+                "seen": false
+            },
+            {
+                "name": "Great Blue Heron",
+                "seen": false
+            },
+            {
+                "name": "Sandhill Crane",
+                "seen": false
+            },
+            {
+                "name": "Killdeer",
+                "seen": false
+            }
+            
+        ]
+    },
+    "Common U.S. Birds": {
+        "info": {
+            "coords": [
+                38.902927, -77.039984
+            ],
+            "desc": "Birds commonly found throughout the continenental United States"
+        },
+        "species": [
+            {
+                "name": "Northern Cardinal",
+                "seen": false
+            },
+            {
+                "name": "Blue Jay",
+                "seen": false
+            },
+            {
+                "name": "House Finch",
+                "seen": false
+            },
+            {
+                "name": "American Crow",
+                "seen": false
+            },
+            {
+                "name": "Rock Dove",
+                "seen": false
+            },
+            {
+                "name": "American Goldfinch",
+                "seen": false
+            },
+            {
+                "name": "House Sparrow",
+                "seen": false
+            }
+            
+        ]
     }
-
 }

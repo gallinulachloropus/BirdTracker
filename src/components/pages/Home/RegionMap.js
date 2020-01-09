@@ -1,27 +1,32 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Map, GoogleApiWrapper } from 'google-maps-react'
 
 const RegionMap = (props) => {
-    const style = { maxWidth: '500px', maxHeight: '500px', margin: '1rem auto' }
-    const styleNone = { maxWidth: '500px', maxHeight: '500px', margin: '1rem auto', visibility: 'hidden' }
+    const style = { maxWidth: '80%', maxHeight: '600px', margin: '1rem auto', border: '1px solid black', boxShadow: '#333 0px 0px 10px' }
+    const styleNone = { ...style, visibility: 'collapse' }
     return (
-        <Map
-            google={props.google}
-            zoom={4.75}
-            defaultCenter={{ lat: 0.00, lng: 0.00 }}
-            defaultZoom={9}
-            center={{
-                lat: props.lat,
-                lng: props.long
-            }}
-            style={props.lat && props.long ? style : styleNone}
-        >
+        <Fragment>
+            <Map
+                google={props.google}
+                zoom={5.5}
+                defaultZoom={5.5}
+                center={{
+                    lat: props.lat,
+                    lng: props.long
+                }}
+                initialCenter={{
+                    lat: props.lat,
+                    lng: props.long
+                }}
+                style={props.lat && props.long ? style : styleNone}
+            >
 
-        </Map>
+            </Map>
+        </Fragment>
     )
 }
 
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyAYmPWoV6LQCCcxvkaeTDOshKcRBG2ujN8')
+    apiKey: ('AIzaSyBe5lbgufuxGpmkqYDmgnCc3JArNmLht40')
 })(RegionMap)

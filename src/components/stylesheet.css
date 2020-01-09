@@ -1,11 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Public+Sans&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes loading {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Public Sans', sans-serif;
+    color: #222;
+    background: whitesmoke;
+    letter-spacing: 1px;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid whitesmoke;
+    box-shadow: #333 0px 0px 10px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+article {
+    padding: 1rem;
+}
+
+article>p {
+    text-indent: 3rem;
+    line-height: 150%;
+    text-align: justify;
+    padding: 0.5rem;
+}
+
+h1, h2, h3, h4 {
+    margin: 0.5rem;
+}
+
+p {
+    margin: 0.5rem;
+    text-align: justify;
+}
+
+button {
+    border-radius: 0.5rem;
+    box-shadow: #333 0px 0px 5px;
+    padding: 1rem;
+    background: white;
+    border: none;
+    margin: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+button:hover {
+    box-shadow: blue 0px 0px 5px;
+}
+
+button:active {
+    background: blue;
+    color: white;
+}
+
+a, a:visited {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    background: blue;
+}
+
+a.active {
+    background: blue;
+    color: white;
+}
+
+select.location-select {
+    font-size: 1.75rem;
+    max-width: 80vw;
+    font-family: 'Public Sans', sans-serif;
+    padding: 0.5rem;
+    margin: 1rem;
+    color: #222;
+    appearance: none;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: #333 0px 0px 5px;
+}
+
+select.location-select:hover {
+    box-shadow: blue 0px 0px 5px;
+}
+
+h3.location-heading {
+    font-weight: lighter;
+    min-height: 1.5rem;
+}
+
+img.article-image {
+    border: double 0.3rem grey;
+    float: right;
+    margin: 1.5rem;
+}
+
+span.close-text {
+    color: darkred;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span.close-text:active {
+    color: white;
+    background: darkred;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 nav>a {
-    padding-left: 1rem;
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+h1.logo {
+    font-size: 4rem;
+}
+
+span#bird-red {
+    color: darkred;
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+}
+
+h1.loading {
+    font-size: 3em;
+    margin: auto;
+    text-align: center;
+    animation: loading 0.4s alternate infinite;
 }
 
 div.tracker-item {
     padding: 1rem;
+    margin: 1rem;
+    box-shadow: #333 0px 0px 5px;
+    background: white;
+    border-radius: 0.5rem;
+}
+
+span.species-text {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: grey;
+    margin-right: 2rem;
+}
+
+span.species-text:hover {
+    color: black;
+    text-decoration: none;
+}
+
+span.species-text:active {
+    color: white;
+    background: blue;
+}
+
+input.species-check {
+    float: right;
+    transform: scale(1.5);
+}
+
+span.wiki-text {
+    font-size: 0.75rem;
+    font-style: italic;
+    float: right;
+}
+
+p.region-description {
+    margin: 1rem;
+    font-size: 1.25em;
+}
+
+div.tracker-item-container {
+    width: max-content;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+ul.seen-list {
+    list-style-type: square;
+    font-size: 1.25rem;
+    margin: 2rem;
+}
+
+ul.seen-list>li {
+    margin: 1rem;
+}
+
+@media all and (min-width:0px) and (max-width: 500px) {
+    div.tracker-item-container {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
 }

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import {Link} from 'react-router-dom'
 
 import BirdTrackerDisplay from './BirdTrackerDisplay'
 import TrackerItem from './pages/Tracker/TrackerItem'
 
 import axios from 'axios'
 import uuidv4 from 'uuid'
+import download from 'downloadjs'
 
 import './stylesheet.css'
 
@@ -40,7 +42,9 @@ const BirdTrackerContainer = () => {
     }, [location, regions])
 
     useEffect(() => {
-        localStorage.setItem('regions', JSON.stringify(regions))
+        if (!regions.error && regions) {
+            localStorage.setItem('regions', JSON.stringify(regions))
+        }
     })
 
 
@@ -57,7 +61,7 @@ const BirdTrackerContainer = () => {
             }
             return currentSpecies
         })
-        setRegions({ ...regions}) //not completely sure why this works
+        setRegions({ ...regions }) //not completely sure why this works
     }
 
     const getLocationOptions = () => {
@@ -79,7 +83,7 @@ const BirdTrackerContainer = () => {
                 />
             )
         } else {
-            return <em>Select a location...</em>
+            return <p style={{width: "80vw"}}><em>To use the tracker, select a location from the <Link to="./">Home</Link> page. Then, return here and select a bird for more information.</em> </p>
         }
     }
 
@@ -92,6 +96,28 @@ const BirdTrackerContainer = () => {
                     setCurrentSpecies({ title: species, image: response.data.query.pages[Object.keys(response.data.query.pages)[0]].thumbnail, info: response.data.query.pages[Object.keys(response.data.query.pages)[0]].extract })
                 )
             })
+
+    }
+
+    const getSeenList = () => {
+        if (loaded) {
+            const regionKeys = Object.keys(regions)
+            let seenList = regionKeys.map(thisRegion => regions[thisRegion].species.filter(thisSpecies => {
+                return thisSpecies.seen
+            }))
+            seenList = [].concat.apply([], seenList)
+            return (
+                <Fragment>
+                    <h3>Total seen: {seenList.length}</h3>
+                    <button onClick={() => download(seenList.map(bird => bird.name),'birds-seen.txt','text/plain')}>Download List</button>
+                    <ul className="seen-list">
+                        {seenList.map(species => <li key={uuidv4()}>{species.name}</li>)}
+                    </ul>
+                </Fragment>
+            )
+        } else {
+            return <h1 className='loading'>...</h1>
+        }
 
     }
 
@@ -108,6 +134,7 @@ const BirdTrackerContainer = () => {
         <BirdTrackerDisplay
             location={location}
             currentSpecies={currentSpecies}
+            setCurrentSpecies={setCurrentSpecies}
             regionInfo={regionInfo}
             regions={regions}
             loaded={loaded}
@@ -115,6 +142,7 @@ const BirdTrackerContainer = () => {
             getLocationOptions={getLocationOptions}
             getTrackerItems={getTrackerItems}
             reset={reset}
+            getSeenList={getSeenList}
         />
     )
 }

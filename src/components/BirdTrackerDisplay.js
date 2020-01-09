@@ -6,6 +6,7 @@ import Header from './Header'
 import Home from './pages/Home/Home'
 import Tracker from './pages/Tracker/Tracker'
 import About from './pages/About'
+import Seen from './pages/Seen'
 
 
 const BirdTrackerDisplay = (props) => {
@@ -39,8 +40,17 @@ const BirdTrackerDisplay = (props) => {
                             currentSpecies={props.currentSpecies}
                             loaded={props.loaded}
                             getTrackerItems={props.getTrackerItems}
+                            setCurrentSpecies={props.setCurrentSpecies}
                         />
                     }
+                />
+
+                <Route
+                    path="/seen"
+                    render={() =>
+                        <Seen
+                            getSeenList={props.getSeenList}
+                        />}
                 />
 
                 <Route

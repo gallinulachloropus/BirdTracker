@@ -29,5 +29,5 @@ const RegionMap = (props) => {
 
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyBe5lbgufuxGpmkqYDmgnCc3JArNmLht40')
+    apiKey: ('//')
 })(RegionMap)

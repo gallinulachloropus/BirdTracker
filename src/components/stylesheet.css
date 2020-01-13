@@ -157,7 +157,6 @@ h1.logo {
 span#bird-red {
     color: #C41E3A;
     -webkit-text-stroke: 1.5px black;
-    text-stroke: 1.5px black;
 }
 
 h1.loading {
@@ -215,7 +214,6 @@ div.tracker-item {
     margin: 1rem;
     box-shadow: #333 0px 0px 5px;
     background: white;
-    min-width: content;
     border-radius: 1rem;
     font-size: 1.5rem;
     white-space: pre-wrap;

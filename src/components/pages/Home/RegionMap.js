@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Map, GoogleApiWrapper } from 'google-maps-react'
+import {GoogleMapsApiKey} from '../../../config.json'
 
 const RegionMap = (props) => {
     const style = { maxWidth: '80%', maxHeight: '600px', margin: '1rem auto', border: '1px solid black', boxShadow: '#333 0px 0px 10px' }
@@ -29,5 +30,5 @@ const RegionMap = (props) => {
 
 
 export default GoogleApiWrapper({
-    apiKey: ('//')
+    apiKey: (GoogleMapsApiKey)
 })(RegionMap)

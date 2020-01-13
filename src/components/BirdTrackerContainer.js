@@ -1,9 +1,9 @@
-// @flow
 import React, { useState, useEffect, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import BirdTrackerDisplay from './BirdTrackerDisplay'
 import TrackerItem from './pages/Tracker/TrackerItem'
+import dummy from './pages/Tracker/dummy.json'
 
 import axios from 'axios'
 import uuidv4 from 'uuid'
@@ -15,12 +15,12 @@ const BirdTrackerContainer = () => {
     const [loaded, setLoaded] = useState(false)
     const [location, setLocation] = useState('')
     const [regionInfo, setRegionInfo] = useState({ desc: '', coords: ['', ''] })
-    const [regions, setRegions] = useState({ 'Error: Region file not found': 'Error: Region file not found' })
+    const [regions, setRegions] = useState(dummy)
     const [currentSpecies, setCurrentSpecies] = useState({ image: '', info: '', title: '' })
 
     useEffect(() => {
-        const userData = JSON.parse(localStorage.getItem('regions'))
         if (localStorage.getItem('regions')) {
+            const userData = JSON.parse(localStorage.getItem('regions') || '')
             setRegions(userData)
             setLoaded(true)
         }
@@ -28,6 +28,10 @@ const BirdTrackerContainer = () => {
             axios.get('./birdList.json')
                 .then(response => {
                     setRegions(response.data)
+                    setLoaded(true)
+                })
+                .catch(error => {
+                    console.log(error)
                     setLoaded(true)
                 })
         }
@@ -56,13 +60,15 @@ const BirdTrackerContainer = () => {
     }
 
     const handleTrackerCheck = (species) => {
-        regions[location].species.map(currentSpecies => {
-            if (currentSpecies.name === species.name) {
-                currentSpecies.seen = !currentSpecies.seen
-            }
-            return currentSpecies
-        })
-        setRegions({ ...regions }) //not completely sure why this works
+        if (location) {
+            regions[location].species.map(currentSpecies => {
+                if (currentSpecies.name === species.name) {
+                    currentSpecies.seen = !currentSpecies.seen
+                }
+                return currentSpecies
+            })
+            setRegions({ ...regions })
+        }
     }
 
     const getLocationOptions = () => {
@@ -90,12 +96,16 @@ const BirdTrackerContainer = () => {
 
     const getSpeciesInfo = (species) => {
         setLoaded(false)
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&exsentences=8&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
             .then(response => {
                 setLoaded(true)
-                return (
-                    setCurrentSpecies({ title: species, image: response.data.query.pages[Object.keys(response.data.query.pages)[0]].thumbnail, info: response.data.query.pages[Object.keys(response.data.query.pages)[0]].extract })
-                )
+                if (!response.data.query.pages[-1]) {
+                    return (
+                        setCurrentSpecies({ title: species, image: response.data.query.pages[Object.keys(response.data.query.pages)[0]].thumbnail, info: response.data.query.pages[Object.keys(response.data.query.pages)[0]].extract })
+                    )
+                } else {
+                    alert('No information found')
+                }
             })
 
     }
@@ -111,9 +121,12 @@ const BirdTrackerContainer = () => {
                 <Fragment>
                     <h3>Total seen: {seenList.length}</h3>
                     <button onClick={() => download(seenList.map(bird => bird.name), 'birds-seen.txt', 'text/plain')}>Download List</button>
-                    <ul className="seen-list">
-                        {seenList.map(species => <li key={uuidv4()}>{species.name}</li>)}
-                    </ul>
+                    {seenList.length > 0 ? (
+                        <ul className="seen-list">
+                            {seenList.map(species => <li key={uuidv4()}>{species.name}</li>)}
+                        </ul>
+                    ) : ''}
+
                 </Fragment>
             )
         } else {

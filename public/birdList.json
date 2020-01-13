@@ -1,11 +1,11 @@
 {
-    "Cascadia": {
+    "Pacific Northwest": {
         "info": {
             "coords": [
                 42.840151,
                 -122.290295
             ],
-            "desc": "The region spanning from northern California through Washington, characterized by mountians and rainforests."
+            "desc": "The region spanning from northern California through Washington, characterized by mountains and rainforests."
         },
         "species": [
             {
@@ -33,10 +33,6 @@
                 "seen": false
             },
             {
-                "name": "American Robin",
-                "seen": false
-            },
-            {
                 "name": "Western Meadowlark",
                 "seen": false
             },
@@ -54,6 +50,42 @@
             },
             {
                 "name": "Cedar Waxwing",
+                "seen": false
+            },
+            {
+                "name": "Surf Scoter",
+                "seen": false
+            },
+            {
+                "name": "Black Turnstone",
+                "seen": false
+            },
+            {
+                "name": "Surfbird",
+                "seen": false
+            },
+            {
+                "name": "Pigeon Guillemot",
+                "seen": false
+            },
+            {
+                "name": "Glaucous-winged gull",
+                "seen": false
+            },
+            {
+                "name": "Western Gull",
+                "seen": false
+            },
+            {
+                "name": "Sooty Grouse",
+                "seen": false
+            },
+            {
+                "name": "Harlequin duck",
+                "seen": false
+            },
+            {
+                "name": "Cinnamon teal",
                 "seen": false
             }
         ]
@@ -154,11 +186,16 @@
             {
                 "name": "Sanderling",
                 "seen": false
+            },
+            {
+                "name": "Ruddy Turnstone",
+                "seen": false
             }
+            
             
         ]
     },
-    "Texas and Southwest": {
+    "Southwest U.S. and Texas": {
         "info": {
             "coords": [
                 33.443048,
@@ -169,6 +206,10 @@
         "species": [
             {
                 "name": "Red-Tailed Hawk",
+                "seen": false
+            },
+            {
+                "name": "Ladder-backed Woodpecker",
                 "seen": false
             },
             {
@@ -204,6 +245,10 @@
                 "seen": false
             },
             {
+                "name": "Common Raven",
+                "seen": false
+            },
+            {
                 "name": "Acorn Woodpecker",
                 "seen": false
             },
@@ -229,6 +274,34 @@
             },
             {
                 "name": "Killdeer",
+                "seen": false
+            },
+            {
+                "name": "Curve-billed Thrasher",
+                "seen": false
+            },
+            {
+                "name": "Anna's Hummingbird",
+                "seen": false
+            },
+            {
+                "name": "Cooper's Hawk",
+                "seen": false
+            },
+            {
+                "name": "Verdin",
+                "seen": false
+            },
+            {
+                "name": "White-crowned Sparrow",
+                "seen": false
+            },
+            {
+                "name": "Costa's Hummingbird",
+                "seen": false
+            },
+            {
+                "name": "Rufous Hummingbird",
                 "seen": false
             }
             
@@ -272,6 +345,38 @@
             },
             {
                 "name": "Mourning Dove",
+                "seen": false
+            },
+            {
+                "name": "Mallard",
+                "seen": false
+            },
+            {
+                "name": "Blue-winged Teal",
+                "seen": false
+            },
+            {
+                "name": "Canada Goose",
+                "seen": false
+            },
+            {
+                "name": "American Wigeon",
+                "seen": false
+            },
+            {
+                "name": "American Robin",
+                "seen": false
+            },
+            {
+                "name": "Gadwall",
+                "seen": false
+            },
+            {
+                "name": "Northern Mockingbird",
+                "seen": false
+            },
+            {
+                "name": "Red-winged Blackbird",
                 "seen": false
             }
             

@@ -1,3 +1,4 @@
+// @flow
 import React, { useState, useEffect, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -74,7 +75,7 @@ const BirdTrackerContainer = () => {
 
     const getTrackerItems = () => {
         if (loaded && location) {
-            return regions[location].species.map(thisSpecies =>
+            return regions[location].species.sort((a, b) => (a.name > b.name) ? 1 : -1).map(thisSpecies =>
                 <TrackerItem
                     species={thisSpecies}
                     key={uuidv4()}

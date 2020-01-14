@@ -14,6 +14,11 @@
     }
 }
 
+::selection {
+    background: rgba(0, 0, 255, 0.5);
+    color: white;
+}
+
 body {
     font-family: 'Public Sans', sans-serif;
     color: #222;
@@ -74,7 +79,7 @@ button:hover {
 }
 
 button:active {
-    background: blue;
+    background: rgba(0, 0, 255, 0.75);
     color: white;
 }
 
@@ -90,12 +95,7 @@ a:hover {
 
 a:active {
     color: white;
-    background: blue;
-}
-
-a.active {
-    background: blue;
-    color: white;
+    background: rgba(0, 0, 255, 0.75);
 }
 
 select.location-select {
@@ -185,7 +185,7 @@ span.species-text:hover {
 
 span.species-text:active {
     color: white;
-    background: blue;
+    background: rgba(0, 0, 255, 0.75);
 }
 
 input.species-check {
@@ -225,7 +225,19 @@ div.tracker-item {
     border-radius: 1rem;
     font-size: 1.5rem;
     white-space: pre-wrap;
-    width: content;
+    width: auto;
+}
+
+div.tracker-item-active {
+    background: rgba(0, 0, 255, 0.75);
+}
+
+div.tracker-item-active>span {
+    color: whitesmoke;
+}
+
+div.tracker-item-active>span:hover {
+    color: white;
 }
 
 ul.seen-list {

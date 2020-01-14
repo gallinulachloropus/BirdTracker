@@ -8,7 +8,7 @@ const About = (props) => {
             <p>BirdTracker v{version}</p>
             <p>No-backend bird watching app written in React. Last updated {lastUpdate}.</p>
             <button onClick={props.reset}>
-                Reset/Update BirdTracker
+                Update Bird List
             </button>
         </main>
     )

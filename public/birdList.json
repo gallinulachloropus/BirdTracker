@@ -1,10 +1,6 @@
 {
     "Common Birds (North America)": {
         "info": {
-            "coords": [
-                38.902927,
-                -77.039984
-            ],
             "desc": "Notably common birds that can be found anywhere throughout North America"
         },
         "species": [
@@ -96,10 +92,6 @@
     },
     "Pacific Northwest": {
         "info": {
-            "coords": [
-                42.840151,
-                -122.290295
-            ],
             "desc": "The region spanning from northern California through Washington, characterized by mountains and rainforests."
         },
         "species": [
@@ -191,10 +183,6 @@
     },
     "Florida and Gulf Coast": {
         "info": {
-            "coords": [
-                29.728655,
-                -85.248072
-            ],
             "desc": "Florida, and the coastal area along the Gulf of Mexico in the southern United States."
         },
         "species": [
@@ -321,15 +309,15 @@
             {
                 "name": "Fish Crow",
                 "seen": false
+            },
+            {
+                "name": "Pine Warbler",
+                "seen": false
             }
         ]
     },
     "Southwest U.S. and Texas": {
         "info": {
-            "coords": [
-                33.443048,
-                -103.022247
-            ],
             "desc": "Texas, and the desert states in the southwestern United States."
         },
         "species": [

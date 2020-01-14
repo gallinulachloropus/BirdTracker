@@ -1,8 +1,11 @@
 import React from 'react'
 
 const TrackerItem = (props) => {
+    const checkedStyle = props.species.seen ? { opacity: 0.5 } : {}
+    const activeStyle = props.species.name === props.currentSpecies.title ? "tracker-item-active tracker-item" : "tracker-item"
+
     return (
-        <div className="tracker-item" style={props.species.seen ? { opacity: 0.5 } : {}}>
+        <div style={checkedStyle} className={activeStyle}>
             <span
                 className="species-text"
                 onClick={() => { props.getSpeciesInfo(props.species.name) }}>

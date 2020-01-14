@@ -86,6 +86,7 @@ const BirdTrackerContainer = () => {
                     key={uuidv4()}
                     handleTrackerCheck={handleTrackerCheck}
                     getSpeciesInfo={getSpeciesInfo}
+                    currentSpecies={currentSpecies}
                 />
             )
         } else {
@@ -143,8 +144,10 @@ const BirdTrackerContainer = () => {
     }
 
     const reset = () => {
-        localStorage.clear()
-        window.location.reload(false)
+        if (window.confirm('This will reset your Birds Seen, are you sure?')) {
+            localStorage.clear()
+            window.location.reload(false)
+        }
     }
 
 

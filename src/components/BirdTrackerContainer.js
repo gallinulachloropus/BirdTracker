@@ -103,7 +103,7 @@ const BirdTrackerContainer = () => {
 
     const getSpeciesInfo = (species) => {
         setLoaded(false)
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exsentences=8&exintro=1&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exsentences=10&exintro=1&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
             .then(response => {
                 setLoaded(true)
                 if (!response.data.query.pages[-1]) {

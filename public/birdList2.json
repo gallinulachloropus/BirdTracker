@@ -1,0 +1,18 @@
+{
+    "Region one": {
+        "description": "lorem ipsum",
+        "species": [
+            "American Crow",
+            "Rock Dove",
+            "Great Egret"
+        ]
+    },
+    "Region two": {
+        "description": "sit amet dolar",
+        "species": [
+            "Great Blue Heron",
+            "Mallard",
+            "House Finch"
+        ]
+    }
+}

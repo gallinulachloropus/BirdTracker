@@ -71,6 +71,26 @@
             {
                 "name": "Red-winged Blackbird",
                 "seen": false
+            },
+            {
+                "name": "Eastern Phoebe",
+                "seen": false
+            },
+            {
+                "name": "European Starling",
+                "seen": false
+            },
+            {
+                "name": "White-breasted Nuthatch",
+                "seen": false
+            },
+            {
+                "name": "Great Horned Owl",
+                "seen": false
+            },
+            {
+                "name": "Barn Owl",
+                "seen": false
             }
         ]
     },
@@ -161,6 +181,10 @@
             },
             {
                 "name": "Cinnamon teal",
+                "seen": false
+            },
+            {
+                "name": "American Coot",
                 "seen": false
             }
         ]
@@ -268,6 +292,34 @@
             },
             {
                 "name": "American Purple Gallinule",
+                "seen": false
+            },
+            {
+                "name": "Pileated Woodpecker",
+                "seen": false
+            },
+            {
+                "name": "Gray Catbird",
+                "seen": false
+            },
+            {
+                "name": "Tufted Titmouse",
+                "seen": false
+            },
+            {
+                "name": "Glossy Ibis",
+                "seen": false
+            },
+            {
+                "name": "Tricolored Heron",
+                "seen": false
+            },
+            {
+                "name": "Osprey",
+                "seen": false
+            },
+            {
+                "name": "Fish Crow",
                 "seen": false
             }
         ]
@@ -379,6 +431,10 @@
             },
             {
                 "name": "Rufous Hummingbird",
+                "seen": false
+            },
+            {
+                "name": "White-faced Ibis",
                 "seen": false
             }
         ]

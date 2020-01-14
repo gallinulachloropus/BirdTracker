@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Public+Sans&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -42,6 +41,10 @@ article.tracker-info {
 div.tracker-info-paragraph {
     margin: 0.5rem;
     max-width: 65%;
+}
+
+div.tracker-info-paragraph>p {
+    line-height: 175%;
 }
 
 h1, h2, h3, h4 {
@@ -115,7 +118,7 @@ select.location-select:hover {
 
 h3.location-heading {
     font-weight: lighter;
-    min-height: 1.5rem;
+    height: 1.5rem;
 }
 
 img.article-image {
@@ -203,7 +206,7 @@ p.region-description {
     font-size: 1.25em;
 }
 
-div.how-to{
+div.how-to {
     margin: auto;
 }
 
@@ -222,7 +225,7 @@ div.tracker-item {
     border-radius: 1rem;
     font-size: 1.5rem;
     white-space: pre-wrap;
-    min-width: content;
+    width: content;
 }
 
 ul.seen-list {
@@ -259,8 +262,7 @@ ul.seen-list>li {
     h1.logo {
         font-size: 2.5rem;
     }
-
-    ul.seen-list{
+    ul.seen-list {
         font-size: 1.5rem;
         padding: 1rem;
     }

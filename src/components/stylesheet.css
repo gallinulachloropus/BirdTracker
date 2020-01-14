@@ -193,7 +193,7 @@ input.species-check {
 }
 
 span.wiki-text {
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-style: italic;
     float: right;
 }
@@ -222,6 +222,7 @@ div.tracker-item {
     border-radius: 1rem;
     font-size: 1.5rem;
     white-space: pre-wrap;
+    min-width: content;
 }
 
 ul.seen-list {
@@ -246,6 +247,7 @@ ul.seen-list>li {
 @media all and (min-width:0px) and (max-width: 650px) {
     div.tracker-item-container {
         grid-template-columns: 100%;
+        width: 100%;
     }
     nav {
         flex-direction: column;

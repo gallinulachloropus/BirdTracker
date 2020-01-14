@@ -1,9 +1,7 @@
 import React from 'react'
-import RegionMap from './RegionMap'
-
-const Home = (props) => {
+const Location = (props) => {
     return (
-        <main>
+        <section>
             <select
                 onChange={props.handleLocationSelect}
                 value={props.location}
@@ -13,9 +11,8 @@ const Home = (props) => {
                 {props.getLocationOptions()}
             </select>
             <p className="region-description"><em>{props.regionInfo.desc}</em></p>
-            <RegionMap lat={props.regionInfo.coords[0]} long={props.regionInfo.coords[1]} />
-        </main>
+        </section>
     )
 }
 
-export default Home
+export default Location

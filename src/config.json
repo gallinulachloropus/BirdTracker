@@ -1,3 +1,5 @@
 {
-    "GoogleMapsApiKey" : "AIzaSyBe5lbgufuxGpmkqYDmgnCc3JArNmLht40"
+    "GoogleMapsApiKey" : "AIzaSyBe5lbgufuxGpmkqYDmgnCc3JArNmLht40",
+    "version" : "0.2.5",
+    "lastUpdate": "1/13/2020"
 }

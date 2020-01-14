@@ -8,7 +8,6 @@ const Header = (props) => {
             <h3 className="location-heading">{props.location ? `⤏ ${props.location}` : null}</h3>
             <nav>
                 <NavLink to="/" exact>Home</NavLink>
-                <NavLink to="/tracker">Tracker</NavLink>
                 <NavLink to="/seen">Birds Seen</NavLink>
                 <NavLink to="/about">About</NavLink>
             </nav>

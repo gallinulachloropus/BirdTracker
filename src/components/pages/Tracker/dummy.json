@@ -1,17 +1,12 @@
 {
-    "ERROR": {
+    "ERROR: JSON FILE NOT FOUND": {
         "info": {
             "coords": [
                 0,
                 0
             ],
-                "desc": "ERROR: JSON not found"
+            "desc": ""
         },
-        "species": [
-            {
-                "name": "ERROR: JSON not found",
-                "seen": false
-            }
-        ]
+        "species": []
     }
 }

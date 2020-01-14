@@ -1,10 +1,12 @@
 import React from 'react'
+import { version, lastUpdate } from '../../config.json'
 
 const About = (props) => {
     return (
         <main>
-            <p>BirdTracker v0.2.3</p>
-            <p>No-backend bird watching app written in React. Last updated 1/10/20.</p>
+            <h1>About BirdTracker</h1>
+            <p>BirdTracker v{version}</p>
+            <p>No-backend bird watching app written in React. Last updated {lastUpdate}.</p>
             <button onClick={props.reset}>
                 Reset/Update BirdTracker
             </button>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import { Link } from 'react-router-dom'
 
 import BirdTrackerDisplay from './BirdTrackerDisplay'
 import TrackerItem from './pages/Tracker/TrackerItem'
@@ -67,7 +66,7 @@ const BirdTrackerContainer = () => {
                 }
                 return currentSpecies
             })
-            setRegions({ ...regions })
+            setRegions({ ...regions }) //this is weird, fix it
         }
     }
 
@@ -90,13 +89,21 @@ const BirdTrackerContainer = () => {
                 />
             )
         } else {
-            return <p style={{ width: "80vw", margin: 'auto' }}><em>To use the tracker, select a location from the <Link to="./">Home</Link> page. Then, return here and select a bird for more information.</em> </p>
+            return (
+                <div className="how-to">
+                    <p><strong>To use BirdTracker:</strong></p>
+                    <ol>
+                        <li>Select a location above</li>
+                        <li>Select a bird for more information</li>
+                    </ol>
+                </div>
+            )
         }
     }
 
     const getSpeciesInfo = (species) => {
         setLoaded(false)
-        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exintro=1&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
+        axios.get(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|pageterms&exsentences=8&exintro=1&titles=${species}&pithumbsize=300&origin=*&redirects=1`)
             .then(response => {
                 setLoaded(true)
                 if (!response.data.query.pages[-1]) {

@@ -12,6 +12,7 @@ import './stylesheet.css'
 
 const BirdTrackerContainer = () => {
     const [loaded, setLoaded] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('')
     const [location, setLocation] = useState('')
     const [regionInfo, setRegionInfo] = useState({ desc: '', coords: ['', ''] })
     const [regions, setRegions] = useState(dummy)
@@ -51,6 +52,11 @@ const BirdTrackerContainer = () => {
         }
     })
 
+    const handleSearch = (e) => {
+        const {value} = e.target 
+        setSearchTerm(value.toUpperCase())
+    }
+
 
     const handleLocationSelect = (e) => {
         const { value } = e.target
@@ -60,13 +66,15 @@ const BirdTrackerContainer = () => {
 
     const handleTrackerCheck = (species) => {
         if (location) {
-            regions[location].species.map(currentSpecies => {
+            const newReg = regions[location].species.map(currentSpecies => {
                 if (currentSpecies.name === species.name) {
                     currentSpecies.seen = !currentSpecies.seen
                 }
+
                 return currentSpecies
             })
-            setRegions({ ...regions }) //this is weird, fix it
+            console.log(newReg)
+            setRegions({ ...regions, [location]: { ...regions[location], species: newReg } })
         }
     }
 
@@ -80,7 +88,7 @@ const BirdTrackerContainer = () => {
 
     const getTrackerItems = () => {
         if (loaded && location) {
-            return regions[location].species.sort((a, b) => (a.name > b.name) ? 1 : -1).map(thisSpecies =>
+            return regions[location].species.sort((a, b) => (a.name > b.name) ? 1 : -1).filter(a => a.name.toUpperCase().includes(searchTerm)).map(thisSpecies =>
                 <TrackerItem
                     species={thisSpecies}
                     key={uuidv4()}
@@ -124,7 +132,7 @@ const BirdTrackerContainer = () => {
             let seenList = regionKeys.map(thisRegion => regions[thisRegion].species.filter(thisSpecies => {
                 return thisSpecies.seen
             }))
-            seenList = [].concat.apply([], seenList)
+            seenList = [].concat.apply([], seenList).sort((a, b) => (a.name > b.name) ? 1 : -1)
             return (
                 <Fragment>
                     <h3>Total seen: {seenList.length}</h3>
@@ -157,6 +165,8 @@ const BirdTrackerContainer = () => {
     return (
         <BirdTrackerDisplay
             location={location}
+            searchTerm={searchTerm}
+            handleSearch={handleSearch}
             currentSpecies={currentSpecies}
             setCurrentSpecies={setCurrentSpecies}
             regionInfo={regionInfo}

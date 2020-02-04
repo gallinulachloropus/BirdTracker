@@ -1,7 +1,7 @@
 {
     "Common Birds (North America)": {
         "info": {
-            "desc": "Notably common birds that can be found anywhere throughout North America"
+            "desc": "Universally common birds that can be found almost anywhere throughout North America"
         },
         "species": [
             {
@@ -86,6 +86,30 @@
             },
             {
                 "name": "Barn Owl",
+                "seen": false
+            },
+            {
+                "name": "Hermit Thrush",
+                "seen": false
+            },
+            {
+                "name": "Ring-necked Duck",
+                "seen": false
+            },
+            {
+                "name": "Redhead (bird)",
+                "seen": false
+            },
+            {
+                "name": "Lesser Scaup",
+                "seen": false
+            },
+            {
+                "name": "Greater Scaup",
+                "seen": false
+            },
+            {
+                "name": "Sandhill Crane",
                 "seen": false
             }
         ]
@@ -178,16 +202,32 @@
             {
                 "name": "American Coot",
                 "seen": false
+            },
+            {
+                "name": "Black-capped Chickadee",
+                "seen": false
             }
         ]
     },
-    "Florida and Gulf Coast": {
+    "Florida and the Gulf Coast": {
         "info": {
-            "desc": "Florida, and the coastal area along the Gulf of Mexico in the southern United States."
+            "desc": "Florida, and the coastal states along the Gulf of Mexico in the southern United States."
         },
         "species": [
             {
                 "name": "Great Egret",
+                "seen": false
+            },
+            {
+                "name": "Carolina Wren",
+                "seen": false
+            },
+            {
+                "name": "Snail Kite",
+                "seen": false
+            },
+            {
+                "name": "Swallow-tailed Kite",
                 "seen": false
             },
             {
@@ -215,7 +255,7 @@
                 "seen": false
             },
             {
-                "name": "Crested Caracara",
+                "name": "Northern Crested Caracara",
                 "seen": false
             },
             {
@@ -312,6 +352,26 @@
             },
             {
                 "name": "Pine Warbler",
+                "seen": false
+            },
+            {
+                "name": "Palm Warbler",
+                "seen": false
+            },
+            {
+                "name": "Wood Duck",
+                "seen": false
+            },
+            {
+                "name": "Loggerhead Shrike",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
+                "seen": false
+            },
+            {
+                "name": "Carolina Chickadee",
                 "seen": false
             }
         ]
@@ -423,6 +483,10 @@
             },
             {
                 "name": "White-faced Ibis",
+                "seen": false
+            },
+            {
+                "name": "Painted Bunting",
                 "seen": false
             }
         ]

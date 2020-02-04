@@ -98,6 +98,13 @@ a:active {
     background: rgba(0, 0, 255, 0.75);
 }
 
+/* This is not a duplicate, React Router uses this class*/
+
+a.active {
+    color: white;
+    background: rgba(0, 0, 255, 0.75);
+}
+
 select.location-select {
     font-size: 1.75rem;
     width: 80vw;
@@ -259,6 +266,20 @@ ul.seen-list>li {
     padding: 0.5rem;
 }
 
+input[type="text"] {
+    margin: 1rem;
+    font-size: 1.25em;
+    padding: 0.75rem;
+    width: 50vw;
+    box-shadow: #333 0px 0px 5px;
+    border-radius: 1rem;
+    border: none;
+}
+
+input[type="text"]:focus{
+    box-shadow: blue 0px 0px 5px;
+}
+
 @media all and (min-width:0px) and (max-width: 650px) {
     div.tracker-item-container {
         grid-template-columns: 100%;
@@ -278,4 +299,5 @@ ul.seen-list>li {
         font-size: 1.5rem;
         padding: 1rem;
     }
+
 }

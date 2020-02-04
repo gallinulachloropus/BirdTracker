@@ -9,7 +9,7 @@ const TrackerItem = (props) => {
             <span
                 className="species-text"
                 onClick={() => { props.getSpeciesInfo(props.species.name) }}>
-                {props.species.name}
+                {props.species.name.replace(' (bird)','')}
             </span>
             <input
                 type="checkbox"

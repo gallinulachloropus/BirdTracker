@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 
 import BirdTrackerDisplay from './BirdTrackerDisplay'
 import TrackerItem from './pages/Tracker/TrackerItem'
+import Search from './pages/Tracker/Search'
 import dummy from './pages/Tracker/dummy.json'
 
 import axios from 'axios'
@@ -53,8 +54,8 @@ const BirdTrackerContainer = () => {
     })
 
     const handleSearch = (e) => {
-        const {value} = e.target 
-        setSearchTerm(value.toUpperCase())
+        const { value } = e.target
+        setSearchTerm(value)
     }
 
 
@@ -88,14 +89,22 @@ const BirdTrackerContainer = () => {
 
     const getTrackerItems = () => {
         if (loaded && location) {
-            return regions[location].species.sort((a, b) => (a.name > b.name) ? 1 : -1).filter(a => a.name.toUpperCase().includes(searchTerm)).map(thisSpecies =>
-                <TrackerItem
-                    species={thisSpecies}
-                    key={uuidv4()}
-                    handleTrackerCheck={handleTrackerCheck}
-                    getSpeciesInfo={getSpeciesInfo}
-                    currentSpecies={currentSpecies}
-                />
+            let getItems = () => {
+                return regions[location].species.sort((a, b) => (a.name > b.name) ? 1 : -1).filter(a => a.name.toUpperCase().includes(searchTerm.toUpperCase())).map(thisSpecies =>
+                    <TrackerItem
+                        species={thisSpecies}
+                        key={uuidv4()}
+                        handleTrackerCheck={handleTrackerCheck}
+                        getSpeciesInfo={getSpeciesInfo}
+                        currentSpecies={currentSpecies}
+                    />
+                )
+            }
+            return (
+                <React.Fragment>
+                    <Search searchTerm={searchTerm} handleSearch={handleSearch} />
+                    <div className="tracker-item-container">{getItems()}</div>
+                </React.Fragment>
             )
         } else {
             return (
@@ -165,8 +174,6 @@ const BirdTrackerContainer = () => {
     return (
         <BirdTrackerDisplay
             location={location}
-            searchTerm={searchTerm}
-            handleSearch={handleSearch}
             currentSpecies={currentSpecies}
             setCurrentSpecies={setCurrentSpecies}
             regionInfo={regionInfo}

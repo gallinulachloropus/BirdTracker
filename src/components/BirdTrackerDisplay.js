@@ -31,8 +31,6 @@ const BirdTrackerDisplay = (props) => {
                                 getLocationOptions={props.getLocationOptions}
                             />
                             <Tracker
-                                searchTerm = {props.searchTerm}
-                                handleSearch = {props.handleSearch}
                                 regions={props.regions}
                                 currentSpecies={props.currentSpecies}
                                 loaded={props.loaded}

@@ -215,6 +215,7 @@ p.region-description {
 
 div.how-to {
     margin: auto;
+    width: 60vw;
 }
 
 div.tracker-item-container {

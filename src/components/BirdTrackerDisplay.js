@@ -12,13 +12,8 @@ import Seen from './pages/Seen'
 const BirdTrackerDisplay = (props) => {
     return (
         <BrowserRouter>
-
-            <Header
-                location={props.location}
-            />
-
+            <Header location={props.location} />
             <Switch>
-
                 <Route
                     exact
                     path="/"
@@ -40,23 +35,16 @@ const BirdTrackerDisplay = (props) => {
                         </React.Fragment>
                     }
                 />
-
                 <Route
                     path="/seen"
                     render={() =>
-                        <Seen
-                            getSeenList={props.getSeenList}
-                        />}
+                        <Seen getSeenList={props.getSeenList} />}
                 />
-
                 <Route
                     path="/about"
                     render={() =>
-                        <About
-                            reset={props.reset}
-                        />}
+                        <About reset={props.reset} />}
                 />
-
             </Switch>
 
         </BrowserRouter>
